@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Java-to-postman:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Java_to_postman_jar</output-path>
+    <root id="archive" name="Java-to-postman.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="Java-to-postman" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/info/picocli/picocli/4.6.1/picocli-4.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/info/picocli/picocli-groovy/4.6.1/picocli-groovy-4.6.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
