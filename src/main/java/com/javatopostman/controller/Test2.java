@@ -1,17 +1,16 @@
 package com.javatopostman.controller;
 
-import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-public class Test {
+public class Test2 {
 
-    @Path("/test")
+    @Path("/test2")
     @Produces()
-    @POST
-    public Response doTest(){
+    @PUT
+    public Response doTest2(){
         return null;
     }
 
-    // /base/test
 }
