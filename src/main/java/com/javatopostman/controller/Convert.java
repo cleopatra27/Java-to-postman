@@ -83,8 +83,8 @@ class Collection implements Callable<Integer> {
 //        System.exit(exitCode);
 
         List<String> files = new ArrayList<String>();
-        files.add("/Users/cleopatradouglas/Desktop/Java-to-postman/src/main/java/com/javatopostman/controller/Test.java");
-        files.add("/Users/cleopatradouglas/Desktop/Java-to-postman/src/main/java/com/javatopostman/controller/Test2.java");
+        files.add("/controller/Test.java");
+        files.add("/controller/Test2.java");
 
         for (String file : files) {
             BufferedReader reader;
@@ -141,7 +141,7 @@ class Collection implements Callable<Integer> {
 
 
                         readers = new BufferedReader(new FileReader(
-                                "/Users/cleopatradouglas/Desktop/Java-to-postman/src/main/java/com/javatopostman/controller/" + response + ".java"));
+                                "/controller/" + response + ".java"));
                         String lined = readers.readLine();
                         while (lined != null) {
                             //check if an object data
