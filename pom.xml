@@ -31,6 +31,11 @@
             <version>20210307</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
             <groupId>com.brewtab.json</groupId>
             <artifactId>json</artifactId>
             <version>1.0.0</version>

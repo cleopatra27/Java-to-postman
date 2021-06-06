@@ -1,5 +1,6 @@
 package com.javatopostman.controller;
 
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import picocli.CommandLine;
@@ -14,10 +15,7 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.file.Files;
 import java.security.MessageDigest;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -83,7 +81,7 @@ class Collection implements Callable<Integer> {
 //        System.exit(exitCode);
 
         List<String> files = new ArrayList<String>();
-        files.add("/controller/Test.java");
+        files.add("/Test.java");
         files.add("/controller/Test2.java");
 
         for (String file : files) {
@@ -135,7 +133,16 @@ class Collection implements Callable<Integer> {
                     //check if line has object
                     if (line.contains("(") && line.contains(")") && line.contains("public")) {
                         String response = line.substring(line.lastIndexOf("public ") + 7, line.lastIndexOf(" "));
+                        //String response = StringUtils.substringBetween(line, " (", " ");
                         System.out.println("response: " + response);
+
+//                        if(response == null){
+//                            return;
+//                        }
+
+                        //check if its a data type
+                        List<String> list = Arrays.asList("int", "String");
+                          if(!list.contains(response)){
 
                         BufferedReader readers;
 
@@ -167,7 +174,7 @@ class Collection implements Callable<Integer> {
                                     key = lined.substring(lined.lastIndexOf("double ") + 7, lined.lastIndexOf(";"));
                                     value = 0.00;
                                 } else {
-                                    System.out.println("map: "+new JSONObject(map));
+                                    System.out.println("map: " + new JSONObject(map));
                                     data.add(new JSONObject(map));
                                     String sfj = new PostmanConverter().doPostmanConverter("TEST", data, "");
                                     return;
@@ -180,6 +187,9 @@ class Collection implements Callable<Integer> {
                         }
 
                         readers.close();
+                    }
+                        String sfj = new PostmanConverter().doPostmanConverter("TEST", data, "");
+                       // return;
 
                     }
                     //check return statement
@@ -214,5 +224,6 @@ class Collection implements Callable<Integer> {
         PATCH,
         FETCH
     }
+
 
 }

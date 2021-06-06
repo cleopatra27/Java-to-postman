@@ -9,7 +9,7 @@ public class Test {
     @Path("/test")
     @Produces()
     @POST
-    public Response doTest(){
+    public Response doTest(Response data){
         return null;
     }
 
